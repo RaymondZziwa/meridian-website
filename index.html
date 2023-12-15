@@ -221,7 +221,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
                     <h1 id="intro" style="text-align: center;">WHO WE ARE...</h1>
                     <div>
-                        <p style="text-align: center;font-size:20px;margin:1px;color:white;padding:2px;margin-bottom:10px">
+                        <p style="text-align: center;font-size:20px;margin:1px;color:white;padding:2px;padding-bottom:10px">
                             We are enlisted members of the Uganda Institute of Professional Engineers who are <br> also affiliated to the Uganda National Chamber of Commerce and Industry.
                             <br><br>
                             Authorised dealers and agents of Watford Control (UK), the world leader in AC Voltage <br> stabilisation and power conditioning both single and three phase versions.
@@ -469,5 +469,18 @@
     <script>
         AOS.init();
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var video = document.querySelector('.vid');
+    
+            // Check if it's a mobile device
+            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+            // Autoplay video on mobile devices
+            if (isMobile) {
+                video.play();
+            }
+        });
+    </script> 
 </body>
 </html>

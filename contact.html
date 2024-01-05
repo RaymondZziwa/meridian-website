@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Sales & Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(images/bkg.png);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .active{
+            border-bottom: 2px solid #3498db; /* Blue border at the bottom */
+            color: #3498db; /* Optionally, change the text color on activation */
+            text-decoration: none; /* Optionally, remove the default underline on activation */
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -350px; 
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            transition: left 0.3s ease; 
+            z-index: 3;
+        }
+        
+        .side-menu ul {
+            display: block;
+            list-style: none;
+            padding: 20px;
+        }
+        
+        .side-menu ul li {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        .side-menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            font-size: 35px;
+        }
+        
+        .side-menu a:hover {
+            color: #2B91DB; 
+        }
+
+        .contact-details{
+            color: grey;
+        }
+
+        .navbar-links{
+            display: inline-block;
+            padding-top: 8%;
+            font-size: 25px;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        a{
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        ul{
+            text-align: right;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        input{
+            width: 98%;
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f2f2f2; 
+            color: #333; 
+        }
+
+        textarea{
+            width: 98%;
+            height: 330px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f2f2f2; 
+            color: #333; 
+        }
+
+        .send-button {
+            position: relative;
+            bottom: 50px;
+            right: 0px;
+            left: 870px;
+            padding: 8px 16px;
+            background-color: #3498db; /* Blue background */
+            color: #fff; /* Text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+      
+        /* Style for the placeholder */
+        input::placeholder {
+            color: #3498db; 
+            font-weight: bold;
+        }
+
+        textarea::placeholder {
+            color: #3498db; 
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+         /* Media Query for Small Screens (Mobile) */
+         @media only screen and (max-width: 768px) {
+
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+            .logo-img{
+                height: 150px;
+            }
+
+            #mobile-menu{
+                margin-top: 50px;
+            }
+
+            .headers{
+                text-align: center;
+            }
+
+            .contact-details{
+                text-align: center;
+            }
+
+            .navbar-links {
+                display: none; 
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                z-index: 1;
+            }
+
+            .nav-list.show {
+                display: flex; 
+            }
+
+            .menu-toggle {
+                display: inline-block 
+            }
+
+            .contact-form{
+                flex-direction: column;
+            }
+
+            #accreditation-text{
+                color:black
+            }
+
+            .send-button {
+                position: relative;
+                bottom: 50px;
+                right: 0px;
+                left: 250px;
+                padding: 8px 16px;
+                background-color: #3498db; /* Blue background */
+                color: #fff; /* Text color */
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2 logo">
+                <img src="images/meridian-logo.png" alt="logo" height="180px" class="logo-img"/>
+                <img class="menu-toggle" style="float: right;"  id="mobile-menu" src="images/menu-bar.png" height="50px" />
+            </div>
+            <div class="col-sm-4 col-md-10 col-lg-10 col-xl-10">
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="#">INDUSTRIAL WORKS</a></li>
+                        <li><a href="#">DOMESTIC WORKS</a></li>
+                        <li><a href="#">OUR CLIENTS</a></li>
+                        <li><a href="#" class="active">CONTACT US</a></li>
+                        <li><a><img src="images/facebook.png" style="height: 40px;" alt="insta-logo"/></a></li>
+                        <li><a><img src="images/instagram.png" style="height: 40px;" alt="insta-logo"/></a></li>
+                        <li><a><img src="images/twitter.png" style="height: 40px;" alt="insta-logo"/></a></li>
+                        <li><a><img src="images/linkedin.png" style="height: 40px;" alt="insta-logo"/></a></li>
+                        <li><a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 40px;"  alt="insta-logo"/></a></li>
+                    </ul>
+                </div>
+                <div class="side-menu">
+                    <span id="close-menu" style="font-size: 45px;float:right;margin:10px;color:black">X</span>
+                    <ul>
+                        <li><a href="#intro">Home</a></li>
+                        <li><a href="#accreditations">Accreditations</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#clientele">Clientele</a></li>
+                        <li><a href="#contact-us">Contact Us</a></li>
+                    </ul>
+
+                    <div style="margin-left: 20px;">
+                        <a><img src="images/facebook.png" style="height: 50px;margin: 5px" alt="insta-logo"/></a>
+                        <a><img src="images/instagram.png" style="height: 50px;margin: 5px" alt="insta-logo"/></a>
+                        <a><img src="images/twitter.png" style="height: 50px;margin: 5px" alt="insta-logo"/></a>
+                        <a><img src="images/linkedin.png" style="height: 50px;margin: 5px" alt="insta-logo"/></a>
+                        <a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 50px;"  alt="insta-logo"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 50px;">
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 reach-out">
+                <h5 class="headers" style="color:#2B91DB;font-weight:bold">LOCATION</h5>
+                <p class="contact-details">
+                    Head Office<br>
+                    Plot 355, Makerere Road<br><br>
+
+                    <span>
+                    Kajjansi Branch<br>
+                    Plot 255, Kajjansi (Yard)<br>
+                    </span>
+                </p> 
+                <h5 class="headers" style="margin-top: 30px;color:#2B91DB;font-weight:bold">PHONE NUMBERS</h5> 
+                <p class="contact-details">
+                    Head Office<br>
+                    +256 312 272 888<br><br>
+
+                    <span>
+                    Kajjansi Branch<br>
+                    +256 312 272 888<br>
+                    </span>
+                </p> 
+                <h5 class="headers" style="margin-top: 30px;color:#2B91DB;font-weight:bold">POSTAL CODE</h5>
+                <p class="contact-details">
+                    P.O. Box 10129,<br>
+                    KAMPALA,<br>
+                    UGANDA.
+                </p>    
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                <input type="text" placeholder="YOUR PHONE NUMBER">
+                <input type="email" placeholder="YOUR EMAIL" style="margin-top: 20px;">
+                <textarea style="margin-top: 20px;" placeholder="YOUR MESSAGE"></textarea>
+                <button class="send-button" >SEND</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian Sales & Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url(images/bkg.png);
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .active{
+            border-bottom: 2px solid #3498db; /* Blue border at the bottom */
+            color: #3498db; /* Optionally, change the text color on activation */
+            text-decoration: none; /* Optionally, remove the default underline on activation */
+        }
+
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -350px; 
+            width: 350px;
+            height: 100%;
+            background-color: white;
+            transition: left 0.3s ease; 
+            z-index: 3;
+        }
+        
+        .side-menu ul {
+            display: block;
+            list-style: none;
+            padding: 20px;
+        }
+        
+        .side-menu ul li {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        .side-menu a {
+            color: black;
+            text-decoration: none;
+            font-size: 18px;
+            font-size: 35px;
+        }
+        
+        .side-menu a:hover {
+            color: #2B91DB; 
+        }
+
+        .contact-details{
+            color: grey;
+        }
+
+        .navbar-links{
+            display: inline-block;
+            padding-top: 8%;
+            font-size: 25px;
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        a{
+            text-decoration: none;
+            color: #3498db;
+        }
+
+        ul{
+            text-align: right;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+        }
+
+         /* Media Query for Small Screens (Mobile) */
+         @media only screen and (max-width: 768px) {
+
+            body {
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
+            }
+
+            .logo-img{
+                height: 150px;
+            }
+
+            #mobile-menu{
+                margin-top: 50px;
+            }
+
+           
+
+            .navbar-links {
+                display: none; 
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #333;
+                z-index: 1;
+            }
+
+            .nav-list.show {
+                display: flex; 
+            }
+
+            .menu-toggle {
+                display: inline-block 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2 logo">
+                <img src="images/meridian-logo.png" alt="logo" height="180px" class="logo-img"/>
+                <img class="menu-toggle" style="float: right;"  id="mobile-menu" src="images/menu-bar.png" height="50px" />
+            </div>
+            <div class="col-sm-4 col-md-10 col-lg-10 col-xl-10">
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="/industrialworks.html">INDUSTRIAL WORKS</a></li>
+                        <li><a href="/domesticworks.html" class="active">DOMESTIC WORKS</a></li>
+                        <li><a href="/clients.html">OUR CLIENTS</a></li>
+                        <li><a href="/contact.html">CONTACT US</a></li>
+                        <li><a><img src="images/facebook.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                        <li><a><img src="images/instagram.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                        <li><a><img src="images/twitter.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                        <li><a><img src="images/linkedin.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                        <li><a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 40px;cursor:pointer"  alt="insta-logo"/></a></li>
+                    </ul>
+                </div>
+                <div class="side-menu">
+                    <span id="close-menu" style="font-size: 45px;float:right;margin:10px;color:black">X</span>
+                    <ul>
+                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="/industrialworks.html">INDUSTRIAL WORKS</a></li>
+                        <li><a href="/domesticworks.html">DOMESTIC WORKS</a></li>
+                        <li><a href="/clients.html">OUR CLIENTS</a></li>
+                        <li><a href="/contact.html">CONTACT US</a></li>
+                    </ul>
+
+                    <div style="margin-left: 20px;">
+                        <a><img src="images/facebook.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/instagram.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/twitter.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/linkedin.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 50px;cursor:pointer"  alt="insta-logo"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/water-heater-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">WATER HEATER <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/air-conditioner-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">AIR CONDITIONER <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/bathroom-maintenance.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">BATHROOM <br>MAINTENANCE</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/sprinkler-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">SPRINKLER <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/tv-mounting.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">TV MOUNTING</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/volatage-stabilizer-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">VOLTAGE STABILIZER <br>INSTALLATION</h6>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/mechanical-gate.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">MECHANICAL GATE <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/outdoor-lighting.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">OUTDOOR LIGHTING <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/power-inverter-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">POWER INVERTER <br>INSTALLATION</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px;">          
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/interior-lighting.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">INTERIOR LIGHTING <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/light-fixture-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">LIGHTING FIXTURE <br>INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/generator.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">GENERATOR <br>INSTALLATION</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px;margin-bottom:20px">
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/fan-installation.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">FAN INSTALLATION</h6>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
+                <img src="images/gazebo-installation-repair.png" alt="image" height="120px" width="120px"/>
+                <div style="display: inline-block;text-align:center;">
+                    <h6 style="margin-top:20px;color:#2B91DB;font-weight:bold;font-size:20px">GAZEBO <br>INSTALLATION <br>AND REPAIRS</h6>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

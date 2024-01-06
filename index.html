@@ -7,29 +7,48 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="normalize.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
     <style>
-        html, body {
+        body {
+            background-image: url(images/homebkg.png);
+            background-size: cover;
+            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
         }
-        
-        .content {
-            position: relative;
-            z-index: 6; 
-            color: white; 
+
+        #intro {
+            height: 200px;
+            background-color: white;
+            width: 80%;
+            margin: auto;
+            color: grey;
+            opacity: 1;
+            z-index: 5;
+            box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
         }
 
-        .background-image {
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.7; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: black; 
+        .container{
+            width: 100%;
+        }
+
+        .social-logos {
+            display: inline-block;
+            background-color: white;
+            clip-path: polygon(10% 0%, 100% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
+        } 
+
+        .logo-img{
+            margin-top: 60px;
+        }
+
+        .active{
+            border-bottom: 2px solid white; /* Blue border at the bottom */
+            color: white; /* Optionally, change the text color on activation */
+            text-decoration: none; /* Optionally, remove the default underline on activation */
         }
 
         .side-menu {
@@ -38,9 +57,9 @@
             left: -350px; 
             width: 350px;
             height: 100%;
-            background-color: black;
+            background-color: white;
             transition: left 0.3s ease; 
-            z-index: 3;
+            z-index: 8;
         }
         
         .side-menu ul {
@@ -56,7 +75,7 @@
         }
         
         .side-menu a {
-            color: white;
+            color: black;
             text-decoration: none;
             font-size: 18px;
             font-size: 35px;
@@ -66,13 +85,17 @@
             color: #2B91DB; 
         }
 
+
         .navbar-links{
             display: inline-block;
+            padding-top: 8%;
+            font-size: 25px;
+            font-family: 'Barlow Condensed', sans-serif;
         }
 
         a{
             text-decoration: none;
-            color: black;
+            color: white;
         }
 
         ul{
@@ -92,56 +115,31 @@
             cursor: pointer;
         }
 
-        .footer {
-            margin-top: 50px;
-            position: relative;
-        }
-          
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50px; 
-            right: 50px; 
-            border-top: 2px solid black; 
-        }
+         /* Media Query for Small Screens (Mobile) */
+         @media only screen and (max-width: 768px) {
 
-        .copyright {
-            margin-top: 20px;
-            position: relative;
-            margin-bottom: 10px;
-            padding-top: 10px;
-        }
-          
-        .copyright::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50px; 
-            right: 50px; 
-            border-top: 2px solid black; 
-        }
-
-        h6{
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        #accreditation-text{
-            color:white
-        }
-
-        /* Media Query for Small Screens (Mobile) */
-        @media only screen and (max-width: 768px) {
-            .vid{
-                position: relative;
-                height: 500px;
-                background-color: black;
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url(images/homebkg.png);
+                background-size: cover;
+                background-repeat: repeat;
+                overflow-x: hidden;
             }
 
-            .intro{
-                position: relative;
+            .logo-img{
+                margin-top: 0;
+                height: 150px;
             }
+
+            #mobile-menu{
+                margin-top: 50px;
+            }
+
+            .headers{
+                text-align: center;
+            }
+
 
             .navbar-links {
                 display: none; 
@@ -163,369 +161,127 @@
                 display: inline-block 
             }
 
-            .contact-form{
-                flex-direction: column;
+
+            .mission{
+                margin-top: 150px;
             }
 
-            #accreditation-text{
-                color:black
+            .mission h6{
+                padding-top: -50px;
+            }
+
+            .core-values{
+                margin-top: 20px;
+            }
+
+            .vision{
+                margin-top: 20px;
+            }
+
+            #intro{
+                background-color: initial;
+            }
+
+            h5{
+                color:white
+            }
+
+            #intro-p{
+                box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
             }
         }
     </style>
 </head>
-
-<body style="overflow-x:hidden">
-    <div class="video-background">
-        <video class="vid" style="z-index: -1;position:absolute;width: 100%;" autoplay muted loop playsinline>
-          <source src="images/bkg.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-
-        <div class="row content" >
-            <div class="row navbar" style="background-color: white;width:100%;">
-                <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                    <img src="images/meridian-logo.png" alt="company-logo" width="105px" height="78px" style="padding: 10px;"/>
-                    <img class="menu-toggle" style="float: right;"  id="mobile-menu" src="images/menu-bar.png" height="50px" />
-                </div>
-
-                <div class="col-sm-4 col-md-5 col-lg-5 col-xl-5" style="margin-right: 10px;">
-                    <div class="navbar-links">
-                        <ul>
-                            <li><a href="#intro">Home</a></li>
-                            <li><a href="#accreditations">Accreditations</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#clientele">Clientele</a></li>
-                            <li><a href="/contact.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-                    <div class="side-menu">
-                        <span id="close-menu" style="font-size: 45px;float:right;margin:10px">X</span>
-                        <ul>
-                            <li><a href="#intro">Home</a></li>
-                            <li><a href="#accreditations">Accreditations</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#clientele">Clientele</a></li>
-                            <li><a href="#contact-us">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2 logo">
+                <img src="images/home-logo.png" alt="logo" height="150px" class="logo-img" />
+                <img class="menu-toggle" style="float: right;"  id="mobile-menu" src="images/menu-bar.png" height="50px" />
             </div>
-        
-        
-            <div  data-aos="fade-up" class="intro row">
-                <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                    <h1 id="intro" style="text-align: center;">WHO WE ARE...</h1>
-                    <div>
-                        <p style="text-align: center;font-size:20px;margin:1px;color:white;padding:2px;padding-bottom:10px">
-                            We are enlisted members of the Uganda Institute of Professional Engineers who are <br> also affiliated to the Uganda National Chamber of Commerce and Industry.
-                            <br><br>
-                            Authorised dealers and agents of Watford Control (UK), the world leader in AC Voltage <br> stabilisation and power conditioning both single and three phase versions.
-                        </p>
+            <div class="col-sm-4 col-md-10 col-lg-10 col-xl-10">
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="/index.html" class="active">HOME</a></li>
+                        <li><a href="#">INDUSTRIAL WORKS</a></li>
+                        <li><a href="#">DOMESTIC WORKS</a></li>
+                        <li><a href="/clients.html">OUR CLIENTS</a></li>
+                        <li><a href="/contact.html">CONTACT US</a></li>
+                        <div class="social-logos" style="display: inline-block;background-color: white;">
+                            <li><a><img src="images/facebook.png" style="height: 40px;cursor:pointer;margin-left:5px" alt="insta-logo"/></a></li>
+                            <li><a><img src="images/instagram.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                            <li><a><img src="images/twitter.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                            <li><a><img src="images/linkedin.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
+                            <li><a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 40px;cursor:pointer"  alt="insta-logo"/></a></li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="side-menu">
+                    <span id="close-menu" style="font-size: 45px;float:right;margin:10px;color:black">X</span>
+                    <ul>
+                        <li><a href="/index.html">HOME</a></li>
+                        <li><a href="#accreditations">INDUSTRIAL WORKS</a></li>
+                        <li><a href="#services">DOMESTIC WORKS</a></li>
+                        <li><a href="/clients.html">OUR CLIENTS</a></li>
+                        <li><a href="/contact.html">CONTACT US</a></li>
+                    </ul>
+
+                    <div style="margin-left: 20px;">
+                        <a><img src="images/facebook.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/instagram.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/twitter.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/linkedin.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 50px;cursor:pointer"  alt="insta-logo"/></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    
 
-
-    <div class="row" style="margin-top:10px">
-        <div data-aos="fade-right" class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="margin-top: 20px;">
-            <div style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center">
-                <img src="images/mission.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 5px;"/>
-                <h3>MISSION</h3>
-                <p style="color: #848484;">
-                    To offer effective and <br>relevant service to our<br> clients.
-                </p>
+        <div class="row intro-row" style="background-color:rgba(255, 255, 255, 0.4);margin-top:20px;height:500px">
+            <div id="intro" class="row">
+               <h5 style="margin: auto;font-family: 'Barlow Condensed', sans-serif;font-size:30px">WHO WE ARE</h5> 
+               <p id="intro-p" style="background-color: white;">
+                Uganda's hidden powerhouse: Meridian Sales & Services. 30+ years illuminating factories,
+                skyscrapers.
+                & even foreign embassies
+                .Our family of electrical professionals keeps the nation humming, from intricate bullding systems to vital security solutions. We're
+                not just wires & circuits, we are progress, one kilowatt at a time.
+               </p>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="margin-top: 20px;">
-            <div style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center">
-                <img src="images/binoculars.png" alt="vision-icon" width="46px" height="47px" style="margin-top: 5px;"/>
-                <h3>VISION</h3>
-                <p style="color: #848484;">
-                    To remain competitive and <br>relevant in an ever changing <br>environment.
-                </p>
-            </div>
-        </div>
-        <div data-aos="fade-left" class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="margin-top: 20px;">
-            <div style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center">
-                <img src="images/loyalty.png" alt="vision-icon" width="46px" height="47px" style="margin-top: 5px;"/>
-                <h3>CORE VALUES</h3>
-                <p style="color: #848484;">
-                    Professionalism is<br> reflected in all that we do.<br>
-                    The customer remains<br> King in all our dealings.
-                </p>
-            </div>
-        </div>
-    </div>
-    <div data-aos="fade-up" class="row accreditations" style="margin-top:18px">
-        <h3 id="accreditations" style="text-align: center;color:white">ACCREDITATIONS</h3>
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="text-align: center;">
-            <img src="images/accreditation.png" alt="accreditation" width="60%" height="300px"/>    
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6" style="display: flex; align-items: center; justify-content: center;">
-            <p id="accreditation-text" style="text-align:center;font-size:25px;">
-                CERTIFIED FOR QUALITY MANAGEMENT SYSTEMS
-            </p> 
-        </div>
-    </div>
-    <div class="row services" style="margin-top:18px">
-        <h3 id="services" style="text-align: center;">SERVICES</h3>
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="margin-top: 20px;">
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center">
-                <img src="images/service1.png" alt="industry-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">INDUSTRIAL INSTALLATIONS</h3>
-            </div>
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center;margin-top:15px">
-                <img src="images/service2.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">SURVEILLENCE SECURITY SYSTEM INSTALLATIONS AND MAINTENANCE</h3>
-            </div>
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center;margin-top:15px">
-                <img src="images/service3.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">AVIATION WORKS</h3>
-            </div>
-        </div>
-
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="margin-top: 20px;">
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center">
-                <img src="images/service4.png" alt="vision-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">SUB-STATION CONSTRUCTION</h3>
-            </div>
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center;margin-top:15px">
-                <img src="images/service5.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">WASTE <br>MANAGEMENT</h3>
-            </div>
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center;margin-top:15px">
-                <img src="images/service6.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">HIGH/LOW VOLTAGE POWERLINE CONSTRUCTION</h3>
-            </div>
-        </div>
-        
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="margin-top: 20px;">
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center">
-                <img src="images/service7.png" alt="vision-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">SUPPLIES</h3>
-            </div>
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center;margin-top:15px">
-                <img src="images/service8.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">DESIGN AND CONSTRUCTION OF LIGHTING TOWER</h3>
-            </div>
-            <div data-aos="zoom-in-down" style="width: 227px; height: 197px; background: white; box-shadow: 0px 4px 4px #6f7172; margin:auto;text-align:center;margin-top:15px">
-                <img src="images/service9.png" alt="mission-icon" width="46px" height="47px" style="margin-top: 20px;"/>
-                <h3 style="margin-top: 10px;font-size:20px">PETLINE AND EFFLUENT TREATMENT PLANT CONSTRUCTION</h3>
-            </div>
-        </div>
-    </div>
-    <div class="clients" style="margin-top:18px;height:300px">
-        <h3 id="clientele" style="text-align: center;">CLIENTELE</h3>
-        <div data-aos="fade-up" class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner" style="text-align: center;">
-                  <div class="carousel-item active" data-bs-interval="1000">
-                    <img src="images/1.png" height="300px" width="300px" alt="...">
-                  </div>
-                  <div class="carousel-item" data-bs-interval="500">
-                    <img src="images/3.png" height="250px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/5.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/6.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/7.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/8.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/9.png" height="250px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/10.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/11.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/12.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/13.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/14.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/15.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/16.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/17.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/18.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/19.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/20.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/21.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/22.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/23.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/24.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/25.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/26.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/27.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/28.png" height="300px" width="300px"  alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="images/29.png" height="300px" width="300px"  alt="...">
-                  </div>
+            <div class="row" style="width:80%;margin:auto;height:200px;margin-top:-60px;z-index:1;color:grey;">
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 mission" style="background-color: white;clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <h6 style="margin: 0; padding: 0; font-size: 20px; font-family: 'Barlow Condensed'">MISSION</h6>
+                    <p style="text-align: center;">
+                        To offer effective and<br>
+                        relevant service to our<br>
+                        clients.
+                    </p>
                 </div>
-                <button class="carousel-control-prev" style="background-color: black;" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" style="background-color: black;" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="row" style="margin-top:80px;margin-bottom:20px;">
-        <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1"></div>
-        <div data-aos="flip-up" class="col-sm-12 col-md-5 col-lg-5 col-xl-5" style="text-align: center;">
-            <div style="text-align:center">
-                <span>Distribution agent: 
-                    <img src="images/watford.png" alt='watford-logo' height="50px"/>
-                </span>
-            </div>
-        </div> 
-        <div data-aos="flip-up" class="col-sm-12 col-md-5 col-lg-5 col-xl-5" style="text-align: center;">
-            <div style="text-align:center">
-                <span>Sub-contractor for: 
-                    <img src="images/waterleau.png" alt='waterloo-logo'  height="45px"/>
-                </span>
-            </div>
-        </div>          
-    </div>
-
-
-    <div class="contact" style="margin-top:50px;margin-bottom:20px">
-        <h3 id="contact-us" style="text-align: center;color:black">REACH OUT</h3>
-        <div data-aos="flip-up" class="col-sm-12 col-md-12 col-lg-12 col-xl-12" style="text-align: center;">
-            <div style="display: flex; flex-direction: column; align-items: center;">
-                <div class='contact-form' style="display: flex; flex-direction: column; margin-bottom: 10px;">
-                    <input type="text" class="form-control" placeholder="Name" style="margin-right: 10px;margin-top:10px" required/>
-                    <input type="text" class="form-control" placeholder="Phone Number" style="margin-right: 10px;margin-top:10px" required/>
-                    <input type="email" class="form-control" placeholder="Email" style="margin-right: 10px;margin-top:10px" required/>
+                <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1" ></div>
+                <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4 vision" style="background-color: white;clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <h6 style="margin: 0; padding: 0; font-size: 20px; font-family: 'Barlow Condensed'">VISION</h6>
+                    <p style="text-align: center;">
+                        To remain competitive and<br>
+                        relevant in an ever changing<br>
+                        environment.
+                    </p>
                 </div>
-                <textarea class="form-control" style="width: 350px; height: 250px; margin-bottom: 10px;"></textarea>
-                <button style="width: 350px; height: 50px; background: black; border: none; color: white;border-radius:20px;font-size:25px">SEND</button>
+                <div class="col-sm-12 col-md-1 col-lg-1 col-xl-1" ></div>
+                <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3 core-values" style="background-color: white;clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <h6 style="margin: 0; padding: 0; font-size: 20px; font-family: 'Barlow Condensed'">CORE VALUES</h6>
+                    <p style="text-align: center; margin: 10px;">
+                        Professionalism, Integrity. Innovation and customer satisfaction
+                    </p>
+                </div>
             </div>
-        </div>        
-    </div>
+        </div>
 
-    
-    <div class="row footer">
-        <div data-aos="fade-up-right" class="col-sm-12 col-md-4 col-lg-4 col-xl-4 quick-links" style="text-align: center;">
-            <h6>QUICK LINKS</h6>
-            <p>
-                Home<br>
-                Accreditations<br>
-                Services<br>
-                Clientele<br>
-                Contact Us<br>
-            </p>
-        </div>
-        <div data-aos="fade-up-left" class="col-sm-12 col-md-4 col-lg-4 col-xl-4 services-footer" style="text-align: center;">
-            <h6>SERVICES</h6>
-            <p>
-                Industrial Installations <br>
-                Security Systems <br>
-                Aviation Works<br>
-                Waste Management<br>
-                Voltage Powerline Construction<br>
-                Lighting Tower Construction<br>
-            </p>
-        </div>
-        <div data-aos="fade-up-left" class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="text-align: center;">
-            <h6>LOCATIONS</h6>
-            <p>
-                Head Office <br>
-                Plot 355, Makerere Road<br>
-                P.O. BOX 10129, KAMPALA<br>
-                +256 312 272 888
-            </p>
-
-            <p>
-                Kajjansi Branch<br>
-                Plot 255, Kajjansi (Yard)<br>
-                P.O. BOX 10129, KAMPALA<br>
-                +256 312 272 888
-            </p>
-        </div>
     </div>
-
-    <div class="row copyright">
-        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4" style="padding-left: 15px;text-align:center">
-            <span>2023&copy;Meridian. All rights reserved.</span>
-            </span>
-        </div>
-        <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-            <p style="text-align:center">Terms of Service &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;    Privacy Policy&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;         Security&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;    Sitemap</p>
-        </div>
-        <div class="col-sm-12 col-md-2 col-lg-2 col-xl-2" style="text-align: center;cursor:pointer">
-                <img src="images/instagram (2).png" alt="insta-logo"/>
-                <img src="images/facebook (2).png" alt="insta-logo"/>
-                <img src="images/twitter (1).png" alt="insta-logo"/>
-                <a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 23px;" alt="insta-logo"/></a>
-        </div>
-    </div>
-    
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var video = document.querySelector('.vid');
-    
-            // Check if it's a mobile device
-            var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
-            // Autoplay video on mobile devices
-            if (isMobile) {
-                video.play();
-            }
-        });
-    </script> 
 </body>
 </html>

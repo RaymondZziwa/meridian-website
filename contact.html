@@ -13,6 +13,7 @@
     <style>
         body {
             background-image: url(images/bkg.png);
+            background-size: contain;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -64,8 +65,9 @@
 
         .navbar-links{
             display: inline-block;
+            width: 100%;
             padding-top: 8%;
-            font-size: 25px;
+            font-size: 28px;
             font-family: 'Barlow Condensed', sans-serif;
         }
 
@@ -133,6 +135,18 @@
         .menu-toggle {
             display: none;
             cursor: pointer;
+        }
+        .social-icons {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 20px;
+            z-index: 1000; /* Ensure the icons are above other elements */
+        }
+
+        .social-icons a {
+            display: block;
+            margin: 5px;
         }
         /*Test Comment*/
          /* Media Query for Small Screens (Mobile) */
@@ -218,13 +232,9 @@
                         <li><a href="/domesticworks.html">DOMESTIC WORKS</a></li>
                         <li><a href="/clients.html">OUR CLIENTS</a></li>
                         <li><a href="/contact.html" class="active">CONTACT US</a></li>
-                        <li><a><img src="images/facebook.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a><img src="images/instagram.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a><img src="images/twitter.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a><img src="images/linkedin.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 40px;cursor:pointer"  alt="insta-logo"/></a></li>
                     </ul>
                 </div>
+
                 <div class="side-menu">
                     <span id="close-menu" style="font-size: 45px;float:right;margin:10px;color:black">X</span>
                     <ul>
@@ -235,7 +245,7 @@
                         <li><a href="/contact.html">CONTACT US</a></li>
                     </ul>
 
-                    <div style="margin-left: 20px;">
+                    <div class="social-icons" style="margin-left: 20px;">
                         <a><img src="images/facebook.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
                         <a><img src="images/instagram.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
                         <a><img src="images/twitter.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
@@ -260,13 +270,20 @@
                 <h5 class="headers" style="margin-top: 30px;color:#2B91DB;font-weight:bold">PHONE NUMBERS</h5> 
                 <p class="contact-details">
                     Head Office<br>
-                    +256 312 272 888<br><br>
+                    <a href="tel:+256312272888">+256 312 272 888</a><br><br>
 
                     <span>
                     Kajjansi Branch<br>
-                    +256 312 272 888<br>
+                    <a href="tel:+256312272888">+256 312 272 888</a><br>
                     </span>
                 </p> 
+
+                <h5 class="headers" style="margin-top: 30px;color:#2B91DB;font-weight:bold">EMAIL</h5>
+                <p class="contact-details">
+                    <a href="mailto:info@meridian.co.ug">info@meridian.co.ug</a><br>
+                </p>    
+
+
                 <h5 class="headers" style="margin-top: 30px;color:#2B91DB;font-weight:bold">POSTAL CODE</h5>
                 <p class="contact-details">
                     P.O. Box 10129,<br>

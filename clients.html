@@ -13,6 +13,7 @@
     <style>
         body {
             background-image: url(images/bkg.png);
+            background-size: contain;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
@@ -64,8 +65,9 @@
 
         .navbar-links{
             display: inline-block;
+            width: 100%;
             padding-top: 8%;
-            font-size: 25px;
+            font-size: 28px;
             font-family: 'Barlow Condensed', sans-serif;
         }
 
@@ -135,6 +137,19 @@
             cursor: pointer;
         }
 
+        .social-icons {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 20px;
+            z-index: 1000; /* Ensure the icons are above other elements */
+        }
+
+        .social-icons a {
+            display: block;
+            margin: 5px;
+        }
+
          /* Media Query for Small Screens (Mobile) */
          @media only screen and (max-width: 768px) {
 
@@ -167,7 +182,7 @@
                 width: 100%;
                 position: absolute;
                 top: 60px;
-                left: 0;
+                right: 0;
                 background-color: #333;
                 z-index: 1;
             }
@@ -220,13 +235,10 @@
                         <li><a href="/domesticworks.html">DOMESTIC WORKS</a></li>
                         <li><a href="/clients.html" class="active">OUR CLIENTS</a></li>
                         <li><a href="/contact.html">CONTACT US</a></li>
-                        <li><a><img src="images/facebook.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a><img src="images/instagram.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a><img src="images/twitter.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a><img src="images/linkedin.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                        <li><a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 40px;cursor:pointer"  alt="insta-logo"/></a></li>
                     </ul>
                 </div>
+
+
                 <div class="side-menu">
                     <span id="close-menu" style="font-size: 45px;float:right;margin:10px;color:black">X</span>
                     <ul>
@@ -237,7 +249,7 @@
                         <li><a href="/contact.html">CONTACT US</a></li>
                     </ul>
 
-                    <div style="margin-left: 20px;">
+                    <div class="social-icons" style="margin-left: 20px;">
                         <a><img src="images/facebook.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
                         <a><img src="images/instagram.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
                         <a><img src="images/twitter.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
@@ -333,6 +345,25 @@
                 <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" style="text-align: center;color: grey;">
                     <img src="images/8.png" alt="iso" height="100px" width="100px" style="margin-bottom: 20px;"/>
                 </div>
+        </div>
+        <div class="row" style="margin-top: 50px;box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5)">
+            <h4 style="text-align: center;font-family: 'Barlow Condensed', sans-serif;color:#3498db">COMPLETED PROJECTS</h4>
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" style="text-align: center;color: grey;">
+                <h6>PROJECT 1:</h6><br>
+                <!-- <img src="images/waterleau.png" alt="watford" height="80px" width="280px" style="margin-bottom: 20px;"/> -->
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" style="text-align: center;color: grey;">
+                <h6>PROJECT 2:</h6><br>
+                <!-- <img src="images/watford.png" alt="iso" height="80px" width="200px" style="margin-bottom: 20px;"/> -->
+           </div>
+           <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" style="text-align: center;color: grey;">
+                <h6>PROJECT 3:</h6><br>
+                <!-- <img src="images/eme.png" alt="iso" height="100px" width="100px" style="margin-bottom: 20px;"/> -->
+            </div>
+            <div class="col-sm-12 col-md-3 col-lg-3 col-xl-3" style="text-align: center;color: grey;">
+                <h6>PROJECT 4:</h6><br>
+                <!-- <img src="images/accreditation.png" alt="iso" height="150px" width="150px" style="margin-bottom: 20px;"/> -->
+            </div>
         </div>
         <div class="row" style="margin-top: 50px;box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5)">
             <h4 style="text-align: center;font-family: 'Barlow Condensed', sans-serif;color:#3498db">ACCREDITATIONS</h4>

@@ -88,8 +88,9 @@
 
         .navbar-links{
             display: inline-block;
+            width: 100%;
             padding-top: 8%;
-            font-size: 25px;
+            font-size: 28px;
             font-family: 'Barlow Condensed', sans-serif;
         }
 
@@ -113,6 +114,19 @@
         .menu-toggle {
             display: none;
             cursor: pointer;
+        }
+
+        .social-icons {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 20px;
+            z-index: 1000; /* Ensure the icons are above other elements */
+        }
+
+        .social-icons a {
+            display: block;
+            margin: 5px;
         }
 
          /* Media Query for Small Screens (Mobile) */
@@ -207,13 +221,6 @@
                         <li><a href="/domesticworks.html">DOMESTIC WORKS</a></li>
                         <li><a href="/clients.html">OUR CLIENTS</a></li>
                         <li><a href="/contact.html">CONTACT US</a></li>
-                        <div class="social-logos" style="display: inline-block;background-color: white;">
-                            <li><a><img src="images/facebook.png" style="height: 40px;cursor:pointer;margin-left:5px" alt="insta-logo"/></a></li>
-                            <li><a><img src="images/instagram.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                            <li><a><img src="images/twitter.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                            <li><a><img src="images/linkedin.png" style="height: 40px;cursor:pointer" alt="insta-logo"/></a></li>
-                            <li><a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 40px;cursor:pointer"  alt="insta-logo"/></a></li>
-                        </div>
                     </ul>
                 </div>
                 <div class="side-menu">
@@ -226,12 +233,12 @@
                         <li><a href="/contact.html">CONTACT US</a></li>
                     </ul>
 
-                    <div style="margin-left: 20px;">
+                    <div class="social-icons" style="margin-left: 20px;">
                         <a><img src="images/facebook.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
-                        <a><img src="images/instagram.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
-                        <a><img src="images/twitter.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
-                        <a><img src="images/linkedin.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
-                        <a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp.png" style="height: 50px;cursor:pointer"  alt="insta-logo"/></a>
+                        <a><img src="images/instagram-home.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/twitter-home.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a><img src="images/linkedin-home.png" style="height: 50px;margin: 5px;cursor:pointer" alt="insta-logo"/></a>
+                        <a href="whatsapp://send?phone=+256778508050" target="_blank"><img src="images/whatsapp-home.png" style="height: 50px;cursor:pointer"  alt="insta-logo"/></a>
                     </div>
                 </div>
             </div>
@@ -240,11 +247,7 @@
         <div class="row intro-row" style="background-color:rgba(255, 255, 255, 0.4);margin-top:20px;height:500px">
             <div id="intro" class="row">
                <h5 style="margin: auto;font-family: 'Barlow Condensed', sans-serif;font-size:30px">WHO WE ARE</h5> 
-               <p id="intro-p" style="background-color: white;">
-                Uganda's hidden powerhouse: Meridian Sales & Services. 30+ years illuminating factories,
-                skyscrapers.
-                & even foreign embassies
-                .Our family of electrical professionals keeps the nation humming, from intricate bullding systems to vital security solutions. We're
+               <p id="intro-p" style="background-color: white;">Our family of electrical professionals keeps the nation humming, from intricate bullding systems to vital security solutions. We're
                 not just wires & circuits, we are progress, one kilowatt at a time.
                </p>
             </div>
